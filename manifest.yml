@@ -6,6 +6,6 @@ applications:
   random-route: true
   buildpack: https://github.com/cloudfoundry/buildpack-python.git
   services:
-    - mysql-test-db3
+    - mysql-1
   env:
     PYTHONPACKAGENAME: plant-api-concourse

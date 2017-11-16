@@ -4,9 +4,9 @@ from flask_jwt import JWT
 
 from security import authenticate, identity
 from resources.user import UserRegister
-#from resources.plant import Plant, PlantList
-from resources.genus import Genus, GenusList
 from resources.plant import Plant, PlantList
+from resources.genus import Genus, GenusList
+
 
 import json
 import os
@@ -20,7 +20,6 @@ mysql_creds = decoded_config['p-mysql'][0]['credentials']
 print(mysql_creds)
 
 # target and extract the mysql db uri
-
 raw_uri = str(mysql_creds['uri'])
 db_uri = raw_uri.strip('?reconnect=true')
 print(db_uri)
@@ -28,7 +27,7 @@ print(db_uri)
 # initialize flask app
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://1aOORcwTHasK5voa:teOLI9ECAfG0zjle@mysql-broker.local.pcfdev.io:3306/cf_a9565c87_75a9_4275_82ec_6b4f484abdf4'#?reconnect=true' # Works for local pcfdev
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:admin@localhost:3306/my-test-db-1'#?reconnect=true' # Works for local pcfdev
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'testKey'

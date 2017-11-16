@@ -8,36 +8,9 @@ resources:
     #uri: git@github.com:cloudfoundry-community/simple-go-web-app.git
     #uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
     branch: master
-    username: seanw7
-    password: 1Canada
-    private-key: |
-      -----BEGIN RSA PRIVATE KEY-----
-      MIIEogIBAAKCAQEAvO6ILWMOgBBlL8sxxvPuFLraIcLuS93qCygwX3vNlaB5QAfW
-      xta5dYQnXDIliqB80EMdaICqSrgXD1FDmR3zTfsQnjFQQ0OV4HZse6nbbzEqNi5u
-      pygQSpSYvqtAqjB0NAxVD59Y2nFafAnjhAMinxxEFHw52BLFQ3K3H/vMIz8/4T9E
-      IVlFa/81a1619iDUoz2QfiJm6BEYJk7HJP208pOPwD1FHrJ2os01E0i732fF/dRq
-      GkbtUaWTc9lzC/1CRdm9/FK8aXXXMTlC9Zt61CdeA08xjpn5JyzCEwGK0XSYSHuM
-      YUPgxVKwqwFmVnP8DYayEflbaaYyZdPnBIJ2KwIDAQABAoIBAFL8KtBUvB/AE9Hk
-      XF7Y8fAlCn7d0jF8rbps0qJ+DJT2QYvAZbQ8yIU3oNo8JIU5bNlFQXuPWD0tkuNl
-      fF2a7C2KY4g4fNquqvxGx+uhdgLnA3V8+5lsXYuErXrCWcrnMYNTD2GnSi3YsDff
-      WBG6FtDwZ27gCcBArmir0Ie537Zy5f9pqzoZkholYmPVl5ZeaIU+wvY91+A0mqcD
-      wR0q8uw+bCs8k1TyHMuoNMDqJNz/7ZIELPEmLgZu6SNe7CwVOLhQzWO/3tfebPRx
-      c6L1V1WOI+og3aUtLi3AOZBFcKuK19PDKyb79uCRS9bzSHX0rOM5fAScCyR8mwy2
-      gwDQxNECgYEA68bQZF1Vo5wBmuI75LCGA+HT9RYL/HEVFXgYBdabgYKIzL1HZ6GM
-      5/9XJfE2pWLgbkMfzSHJ6w515D7TsFlDnN83hf0DaXTAoxSnb6TwAr1PHGkfrJap
-      H2LHFF3aBQhzCtWsmYoltPUfuHNSyXk3nXQQX/VqozvA4SS6M5y+HF0CgYEAzSMZ
-      Gi2okFS3rjJWomw8pW5Njlep3UIHq7VTKKw02ED8J8rficW88JKXOiYC4eZMKYVL
-      jtqvoudq89w233e3GHKXI/J09HDvSWTr0vSrct6uDcUvrnbALMkyKEmJn8e60k/n
-      DxDlYV0MWgXaMdmddUcty2DpAWtHaeUBlb5adCcCgYAHk5n6v60S1t6OVZrLHIkR
-      8t3W0GCOOiwNRpCvD1hr7v/qZGK5B835XpE0XO3+npDLukh5VQ6iCRLsxMAUuKmd
-      jua/3YOQjfnqw60lv00fKWozZYVpDGZe5dOz6dgptT3NKVSkknXnvMDKMpqEcurA
-      mow0KTTGDhOCqKV7JxxM2QKBgAFSJok6ngk/4mbmwBQPqlxOV4WBHwDjufTrF/v9
-      D+IMmRMQhVv3v/20k/C16fLWbssdppzm35am8tNbKadKuA0aP8rldsdUKtZIJhSX
-      qrr0oB5KlMIE1bv0F7SWtKIowRU1moFIVJHJ7ZhuzTbg9diZerwChb2SmUUfSmFS
-      dnalAoGAQ781pji96/zDr0dWB/p12zyyAhKF02A9SKBhct5pa3u12figMZyYh5S/
-      8EiA6b55pBG3U/kzZ2j7tprqIR9b/HbkHnRm6boEpIwBYsC9+3Vz2wGPoOjARA5h
-      aNa+qt8Wv1NBWPspENIZ04u8fqEPK5XAD5GjRp/21P69SLO8K7U=
-      -----END RSA PRIVATE KEY-----
+    username: {{github_user}}
+    password: {{github_pass}}
+    private-key: {{git-pkey}}
 
 
 - name: resource-deploy-web-app

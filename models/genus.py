@@ -7,7 +7,7 @@ class GenusModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
 
-    plants = db.relationship('PlantModel', lazy='dynamic')#, backref='PlantModel')
+    plants = db.relationship('PlantModel', lazy='dynamic')#, backref='GenusModel')
 
     def __repr__(self):
         return '<GenusModel %r>' % self.name

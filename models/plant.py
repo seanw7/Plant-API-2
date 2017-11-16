@@ -5,15 +5,15 @@ from db import db
 class PlantModel(db.Model):
     __tablename__ = "plants"
 
-    #__table_args__ = (db.ForeignKeyConstraint(['genus_name'],['genus.name']),{'mysql_engine':'InnoDB'})
+    __table_args__ = (db.ForeignKeyConstraint(['genus_name'],['genus.name']),)# {ondelete:cascade},)#,{'mysql_engine':'InnoDB'})
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     quantity = db.Column(db.Float(precision=2))
     price = db.Column(db.Float(precision=2))
 
-    genus_name = db.Column(db.String(80), db.ForeignKey('genus.name'))#, nullable=False)
-    genera = db.relationship('GenusModel')#, backref=db.backref('plants', lazy=True))
+    genus_name = db.Column(db.String(80))#, db.ForeignKey('genus.name'), nullable=False)
+    genera = db.relationship('GenusModel', backref='PlantModel')#, lazy=True)#, cascade="delete-orphan")#backref=db.backref('plants', lazy=True))
 
     def __repr__(self):
         return '<PlantModel %r>' % self.name
@@ -23,7 +23,7 @@ class PlantModel(db.Model):
         self.quantity = quantity
         self.price = price
         self.genus_name = genus_name
-        #url = "http://www.palmpedia.net/wiki/{}_{}".format(genus_id, name)
+        #url = "http://www.palmpedia.net/wiki/{}_{}".format(genus_name, name)
 
     def json(self):
         return {"name": self.name, "price": self.price, "quantity": self.quantity, "value": self.quantity * self.price, \
