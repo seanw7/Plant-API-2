@@ -27,8 +27,8 @@ print(db_uri)
 # initialize flask app
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:admin@localhost:3306/my-test-db-1'#?reconnect=true' # Works for local pcfdev
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:1Canada!@192.168.0.13:3306/my-test-db-1'#?reconnect=true' # Works for local pcfdev
+#app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'testKey'
 api = Api(app)

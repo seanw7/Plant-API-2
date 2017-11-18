@@ -15,7 +15,7 @@ class Plant(Resource):
 						required=True,
 						help="This field cannot be left blank!")
 
-	parser.add_argument('genus_id',
+	parser.add_argument('genus_name',
 						type=str,
 						required=True,
 						help="Every plant needs a genus name")
@@ -34,7 +34,7 @@ class Plant(Resource):
 
 		# Makes sure the item json the user sends to us has a price field.
 		data = Plant.parser.parse_args()
-		plant = PlantModel(name, data['quantity'], data['price'], data['genus_id'])
+		plant = PlantModel(name, data['quantity'], data['price'], data['genus_name'])
 		# Try and insert the POST data into the database.
 		try:
 			plant.save_to_db()
@@ -49,7 +49,7 @@ class Plant(Resource):
 		plant = PlantModel.find_by_name(name)
 
 		if plant is None:
-			plant = PlantModel(name, data['quantity'], data['price'], data['genus_id'])
+			plant = PlantModel(name, data['quantity'], data['price'], data['genus_name'])
 		else:
 			plant.quantity = data['quantity']
 			plant.price = data['price']
